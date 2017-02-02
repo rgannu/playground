@@ -3,8 +3,8 @@ Camel
 
 A Simple Demo to illustrate the concepts and terminology of Camel.
 
-file-copy
----------------------
+File copy Example
+-----------------
 
 This demo is copying files from the data/inbox to data/outbox directory.
 
