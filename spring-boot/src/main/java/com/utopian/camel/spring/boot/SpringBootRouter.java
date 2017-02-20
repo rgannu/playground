@@ -19,6 +19,9 @@ public class SpringBootRouter extends RouteBuilder {
     from("timer:trigger?period={{timer.period}}")
             .transform(method("myBean", "saySomething"))
 //            .bean(sampleBean, "saySomething")
+            .process(exchange -> {
+              System.out.println("PROCESS ====>" + exchange.getIn().getBody());
+            })
             .to("log:out");
 
     from("timer:status?period={{health.period}}")

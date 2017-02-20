@@ -4,32 +4,26 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>com.utopian</groupId>
+    <artifactId>playground</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+    
   <groupId>com.utopian</groupId>
   <artifactId>camel</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Camel Test</name>
-  <inceptionYear>2017</inceptionYear>
 
   <prerequisites>
     <maven>3.3.9</maven>
   </prerequisites>
 
-  <developers>
-    <developer>
-      <id>garamasu</id>
-      <name>Ganesh Ramasubramanian</name>
-    </developer>
-  </developers>
-
   <modules>
     <module>simple</module>
     <module>spring-boot</module>
   </modules>
-
-  <scm>
-    <url>https://github.com/rgannu/camel</url>
-  </scm>
 
   <properties>
 
