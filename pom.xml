@@ -56,6 +56,14 @@
 
     <repositories>
         <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>bintray</name>
+            <url>https://repo.lab.pl.alcatel-lucent.com/jcenter</url>
+        </repository>
+        <repository>
             <id>ana-snapshots</id>
             <name>ANA Snapshots Repository</name>
             <url>https://repo.lab.pl.alcatel-lucent.com/ANA-snapshots</url>
@@ -69,6 +77,16 @@
             <url>https://repo.lab.pl.alcatel-lucent.com/ANA-releases</url>
         </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>bintray-plugins</name>
+            <url>https://repo.lab.pl.alcatel-lucent.com/jcenter</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <profiles>
         <profile>
