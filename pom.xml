@@ -126,7 +126,7 @@
                                         <snapshotRepoKey>${artifactory.snapshots.repo.key}</snapshotRepoKey>
                                     </publisher>
                                     <buildInfo>
-                                        <buildName>ana-installer</buildName>
+                                        <buildName>${project.artifactId}-installer</buildName>
                                         <buildNumber>${project.version}</buildNumber>
                                         <!--<buildUrl>http://build-url.org</buildUrl>-->
                                     </buildInfo>
