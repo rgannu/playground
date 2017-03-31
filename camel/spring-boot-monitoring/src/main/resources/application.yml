@@ -1,0 +1,69 @@
+---
+camel:
+  springboot:
+    name: "Spring Boot Monitoring"
+
+# --------------------------------------------
+# properties used in the Camel route and beans
+# --------------------------------------------
+# a message
+greeting: "Welcome to Spring-Boot Monitoring"
+
+# how often to trigger the timer
+timer:
+  period: 2000
+
+# health status
+health:
+  period: 5000
+
+---
+logging:
+  file: "target/spring-boot-admin-monitoring.log"
+
+management:
+  context-path: "/actuator"
+
+spring:
+  application:
+    name: "Spring Boot Monitoring"
+  boot:
+    admin:
+      client:
+        management-url: http://localhost:8080/mgmt
+        health-url: http://localhost:8080/health
+        service-url: http://localhost:8080/service
+      url: http://localhost:8080
+  profiles:
+    active:
+      - secure
+
+---
+spring:
+  profiles: insecure
+
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false
+
+---
+spring:
+  profiles: secure
+  boot:
+    admin:
+      username: "${security.user.name}"       #These two are needed so that the client
+      password: "${security.user.password}"   #can register at the protected server api
+      client:
+        metadata:
+          user.name: "${security.user.name}"          #These two are needed so that the server
+          user.password:  "${security.user.password}" #can access the proteceted client endpoints
+
+security:
+  user:
+    name: user
+    password: pass
+

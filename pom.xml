@@ -25,6 +25,7 @@
     <modules>
         <module>camel</module>
         <module>samples</module>
+        <module>kafka-junit</module>
     </modules>
 
     <scm>
@@ -56,10 +57,20 @@
 
     <repositories>
         <repository>
+            <id>central</id>
+            <url>http://repo1.maven.org/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <id>central</id>
+        </repository>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>jcenter-central</id>
             <name>bintray</name>
             <url>https://repo.lab.pl.alcatel-lucent.com/jcenter</url>
         </repository>
