@@ -29,9 +29,10 @@
     </modules>
 
     <scm>
-        <url>https://github.com/rgannu/playground</url>
+        <connection>scm:git:git://github.com/rgannu/playground.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/rgannu/playground.git</developerConnection>
+        <url>https://github.com/rgannu/playground.git</url>
     </scm>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -72,21 +73,24 @@
             </snapshots>
             <id>jcenter-central</id>
             <name>bintray</name>
-            <url>https://repo.lab.pl.alcatel-lucent.com/jcenter</url>
+            <!--<url>https://repo.lab.pl.alcatel-lucent.com/jcenter</url>-->
+            <url>http://jcenter.bintray.com</url>
         </repository>
-        <repository>
-            <id>ana-snapshots</id>
-            <name>ANA Snapshots Repository</name>
-            <url>https://repo.lab.pl.alcatel-lucent.com/ANA-snapshots</url>
-        </repository>
-        <repository>
-            <id>ana-releases</id>
-            <name>ANA Releases Repository</name>
-            <snapshots>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-            <url>https://repo.lab.pl.alcatel-lucent.com/ANA-releases</url>
-        </repository>
+        <!--
+                <repository>
+                    <id>ana-snapshots</id>
+                    <name>ANA Snapshots Repository</name>
+                    <url>https://repo.lab.pl.alcatel-lucent.com/ANA-snapshots</url>
+                </repository>
+                <repository>
+                    <id>ana-releases</id>
+                    <name>ANA Releases Repository</name>
+                    <snapshots>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                    <url>https://repo.lab.pl.alcatel-lucent.com/ANA-releases</url>
+                </repository>
+        -->
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -95,7 +99,8 @@
             </snapshots>
             <id>central</id>
             <name>bintray-plugins</name>
-            <url>https://repo.lab.pl.alcatel-lucent.com/jcenter</url>
+            <!--<url>https://repo.lab.pl.alcatel-lucent.com/jcenter</url>-->
+            <url>http://jcenter.bintray.com</url>
         </pluginRepository>
     </pluginRepositories>
 

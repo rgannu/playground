@@ -1,7 +1,19 @@
 ---
+info:
+  scm-url: "@scm.url@"
+  stage: test
+
 camel:
   springboot:
     name: "Spring Boot Monitoring"
+
+management:
+  shell:
+    auth:
+      simple:
+        user:
+          name: user
+          password: pass
 
 # --------------------------------------------
 # properties used in the Camel route and beans
@@ -26,13 +38,9 @@ management:
 
 spring:
   application:
-    name: "Spring Boot Monitoring"
+    name: "@pom.artifactId@"
   boot:
     admin:
-      client:
-        management-url: http://localhost:8080/mgmt
-        health-url: http://localhost:8080/health
-        service-url: http://localhost:8080/service
       url: http://localhost:8080
   profiles:
     active:

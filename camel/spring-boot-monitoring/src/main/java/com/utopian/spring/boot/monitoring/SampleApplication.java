@@ -1,6 +1,8 @@
 package com.utopian.spring.boot.monitoring;
 
 import de.codecentric.boot.admin.config.EnableAdminServer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
@@ -48,31 +50,9 @@ public class SampleApplication {
         }
     }
     // end::configuration-spring-security[]
-/*
-    @Configuration
-    public static class NotifierConfig {
-        @Bean
-        @Primary
-        public RemindingNotifier remindingNotifier() {
-            RemindingNotifier notifier = new RemindingNotifier(filteringNotifier(loggerNotifier()));
-            notifier.setReminderPeriod(TimeUnit.SECONDS.toMillis(10));
-            return notifier;
-        }
 
-        @Scheduled(fixedRate = 1_000L)
-        public void remind() {
-            remindingNotifier().sendReminders();
-        }
-
-        @Bean
-        public FilteringNotifier filteringNotifier(Notifier delegate) {
-            return new FilteringNotifier(delegate);
-        }
-
-        @Bean
-        public LoggingNotifier loggerNotifier() {
-            return new LoggingNotifier();
-        }
-    }*/
+    private Logger getLogger() {
+        return LoggerFactory.getLogger(this.getClass());
+    }
 }
 //CHECKSTYLE:ON

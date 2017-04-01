@@ -1,5 +1,7 @@
 package com.utopian.spring.boot.monitoring;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +18,11 @@ public class SampleBean {
   private String say;
 
   public String saySomething() {
+    getLogger().debug("DEBUG MESSAGE...");
     return say;
   }
 
+  private Logger getLogger() {
+    return LoggerFactory.getLogger(this.getClass());
+  }
 }
